@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: erp-notification
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:${POSTGRES_PORT:15436}/noti_db}
+    username: ${SPRING_DATASOURCE_USERNAME:noti_app}
+    password: ${SPRING_DATASOURCE_PASSWORD:noti_local}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+
+server:
+  port: ${SERVER_PORT:8086}
