@@ -1,6 +1,14 @@
 spring:
   application:
     name: erp-notification
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: ${AUTH_JWKS_URI:http://localhost:8081/internal/auth/jwks}
+  sql:
+    init:
+      mode: always
   datasource:
     url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:${POSTGRES_PORT:15436}/noti_db}
     username: ${SPRING_DATASOURCE_USERNAME:noti_app}
